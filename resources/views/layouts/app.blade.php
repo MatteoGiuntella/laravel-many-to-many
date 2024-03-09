@@ -29,6 +29,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.projects.create') }}">Add Project</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.types.create') }}">Add Type</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.technologies.create') }}">Add Technology</a>
+                            </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

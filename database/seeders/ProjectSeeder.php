@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Controller\ProjectController;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectsRequest;
 use App\Http\Requests\UpdateProjectsRequest;
 use App\Models\Type;
+use App\Models\Technology;
 
 
 
@@ -37,7 +38,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', ['types' => $types]);
+        $technologies = Technology::all();
+        return view('admin.projects.create', ['types' => $types],['technologies' => $technologies]);
     }
 
     /**
@@ -63,7 +65,8 @@ class ProjectController extends Controller
     
     {
         $types = Type::all();
-        return view('admin.projects.update', ['types' => $types, 'project'=>$project]);
+        $technologies = Technology::all();
+        return view('admin.projects.update', ['types' => $types, 'project'=>$project,'technologies' => $technologies]);
     }
 
     /**
