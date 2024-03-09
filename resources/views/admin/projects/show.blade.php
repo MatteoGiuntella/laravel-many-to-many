@@ -24,6 +24,9 @@
                                 {{ $project->type->title }}
                             </li>
                             <li>
+                                {{ $project->technology->title }}
+                            </li>
+                            <li>
                                 {{ $project->url }}
                             </li>
                         </ul>
