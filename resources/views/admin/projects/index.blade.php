@@ -34,7 +34,13 @@
                                         <td>{{ $project->description }}</td>
                                         <td>{{ $project->date }}</td>
                                         <td>{{ $project->type->title }}</td>
-                                        <td>{{ $project->technology->title }}</td>
+                                        <div class="px-2">
+                                            @forelse ($project->technologies as $technology)
+                                                <span class="badge text-bg-primary">{{ $technology->title }}</span>
+                                            @empty
+                                                <p>-</p>
+                                            @endforelse
+                                        </div>
                                         <td>
                                             <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}"
                                                 class="btn btn-xs btn-primary">

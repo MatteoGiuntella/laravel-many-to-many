@@ -23,9 +23,13 @@
                             <li>
                                 {{ $project->type->title }}
                             </li>
-                            <li>
-                                {{ $project->technology->title }}
-                            </li>
+                            <div class="px-2">
+                                @forelse ($project->technologies as $technology)
+                                    <span class="badge text-bg-primary">{{ $technology->title }}</span>
+                                @empty
+                                    <p>-</p>
+                                @endforelse
+                            </div>
                             <li>
                                 {{ $project->url }}
                             </li>
