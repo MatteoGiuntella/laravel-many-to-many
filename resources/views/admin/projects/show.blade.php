@@ -5,7 +5,7 @@
 @section('main-content')
 
     <div class=" container ">
-
+            {{-- @dd( $project->type): --}}
         <div class="row my-4 ">
             <div class="col-12">
                 <div class="card">
@@ -17,6 +17,7 @@
                             <li>
                                 {{ $project->description }}
                             </li>
+                            {{-- @if($project->type->title == null) --}}
                             <li>
                                 {{ $project->date }}
                             </li>

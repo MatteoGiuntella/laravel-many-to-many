@@ -34,6 +34,7 @@ class StoreProjectsRequest extends FormRequest
         return [
             'title.required' => 'PER FAVORE INSERISCI IL CONTENUTO CORRETTO',
             'title.max' => 'NUMERI CARATTERI MAX RAGGIUNTO',
+            'date.required' => 'NUMERI CARATTERI MAX RAGGIUNTO',
         ];
     }
 }

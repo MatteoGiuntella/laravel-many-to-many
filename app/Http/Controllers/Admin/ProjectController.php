@@ -10,6 +10,7 @@ use App\Http\Requests\StoreProjectsRequest;
 use App\Http\Requests\UpdateProjectsRequest;
 use App\Models\Type;
 use App\Models\Technology;
+use Illuminate\Support\Str;
 
 
 
@@ -48,10 +49,11 @@ class ProjectController extends Controller
     public function store(StoreProjectsRequest $request)
     {
         $validatedData = $request->validated();
+        $validatedData['slug'] = Str::slug($validatedData['title']);
 
         $project = Project::create($validatedData);
 
-        return redirect()->route('admin.projects.show', ['project' => $project->id]);
+        return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
 
     /**

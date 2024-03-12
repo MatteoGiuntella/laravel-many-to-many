@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
             $project->slug = Str::slug($project->title);
             $project->date = fake()->dateTime();
             $project->description = fake()->paragraph();
-            $project->type_id = Type::inRandomOrder()->first()->id;
+            $project->type_id = Type::InRandomOrder()->first()->id;
             $project->save();
         }
        

@@ -11,8 +11,9 @@ class Project extends Model
         'url',
         'title',
         'description',
+        'slug',
         'date',
-        'type_id'
+        'type_id',
     ];
     use HasFactory;
 

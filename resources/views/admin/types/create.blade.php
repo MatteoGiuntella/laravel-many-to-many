@@ -17,7 +17,7 @@
     @endif
 
 
-    <form action="{{ route('admin.projects.store') }}" method="POST">
+    <form action="{{ route('admin.types.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -30,18 +30,7 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label  for="url" class="form-label">url <span class="text-danger">*</span></label>
-            <input value="{{ old('url') }}" type="text" class="form-control @error('url') is-invalid @enderror" id="url" name="url" placeholder="Insert url..."
-                maxlength="1024" required>
-                @error('url')
-                <div class="alert alert-danger">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
-
-
+      
         <div class="mb-3">
             <label for="date" class="form-label">Date</label>
             <input value="{{ old('date') }}" type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date" placeholder="Insert date">
@@ -52,15 +41,6 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea  class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3" placeholder="Insert description...">{{ old('description') }}</textarea>
-            @error('description')
-                <div class="alert alert-danger">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
     
         <div>
             <button type="submit" class="btn btn-success w-100">

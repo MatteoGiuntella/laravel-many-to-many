@@ -32,6 +32,9 @@ return new class extends Migration
         //         $table->dropColumn('technology_id');
         //     }
         // });
+        Schema::disableForeignKeyConstraints(); // Disabilita i vincoli di chiave esterna
         Schema::dropIfExists('technologies');
+        Schema::enableForeignKeyConstraints(); // Riabilita i vincoli di chiave esterna
+ 
     }
 };
